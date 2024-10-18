@@ -14,17 +14,17 @@ interface CustomSelectProps {
 }
 
 const CustomSelect: React.FC<CustomSelectProps> = ({ options, label, defaultSelect, onSelectOption }) => {
-  const [isOpen, setIsOpen] = useState(false); // State to track dropdown visibility
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
 
   const handleOptionSelect = (option: Option) => {
     setSelectedOption(option);
     onSelectOption(option.id);
-    setIsOpen(false); // Close the dropdown after selecting an option
+    setIsOpen(false);
   };
 
   const toggleDropdown = () => {
-    setIsOpen(!isOpen); // Toggle dropdown visibility
+    setIsOpen(!isOpen);
   };
 
   return (

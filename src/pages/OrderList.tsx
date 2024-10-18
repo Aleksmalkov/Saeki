@@ -7,19 +7,15 @@ const OrderList: React.FC = () => {
   const { data, loading, error } = useQuery(GET_ALL_ORDERS, {
     context: {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,  // Attach token
+        Authorization: `Bearer ${localStorage.getItem('token')}`, 
       },
     },
   });
 
-  const navigate = useNavigate();  // Hook for navigation
+  const navigate = useNavigate();
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
-
-  const handleChat = (orderId: string) => {
-    navigate(`/chat/${orderId}`);  // Navigate to chat page with order ID
-  };
 
   return (
     <div className="container max-w-screen-xl mx-auto pt-24 text-white" style={{ height: 'calc(100vh - 57px)' }}>

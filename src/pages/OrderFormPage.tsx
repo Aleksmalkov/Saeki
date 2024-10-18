@@ -20,19 +20,18 @@ const OrderFormPage: React.FC = () => {
   const [purchaseOrder, setPurchaseOrder] = useState<File | null>(null);
   const [selectedCardType, setSelectedCardType] = useState(cardTypes[0].id);
   const [showModal, setShowModal] = useState(false);
-  const [fileUrl, setFileUrl] = useState(localStorage.getItem('uploadedFile') || ''); // Ensure file is required for ordering
+  const [fileUrl, setFileUrl] = useState(localStorage.getItem('uploadedFile') || '');
   const [material, setMaterial] = useState('pylon');
-  const [isFormValid, setIsFormValid] = useState(false); // State for button enabled status
+  const [isFormValid, setIsFormValid] = useState(false);
   const [createOrder, { loading, error }] = useMutation(CREATE_ORDER, {
     context: {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,  // Attach token
+        Authorization: `Bearer ${localStorage.getItem('token')}`, 
       },
     },
   });
   const navigate = useNavigate();
 
-  // useEffect to validate form fields and enable/disable the submit button
   useEffect(() => {
     const isCardValid = paymentMethod === 'card' ? cardNumber.length === 16 : true;
     const isPurchaseOrderValid = paymentMethod === 'purchaseOrder' ? !!purchaseOrder : true;

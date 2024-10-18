@@ -12,10 +12,8 @@ const MainLayout: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black flex flex-col">
-      {/* Updated header to be fixed at the top */}
       <header className="app-header fixed top-0 w-full bg-black z-10">
         <div className="container max-w-screen-xl mx-auto p-4 text-white flex justify-between items-center">
-          {/* Logo */}
           <div className="w-32">
             <Link to="/">
               <img 
@@ -28,7 +26,6 @@ const MainLayout: React.FC = () => {
           <div>
             {!isLoggedIn ? (
               <div className='flex gap-4'>
-                {/* Updated buttons */}
                 <Link
                   to="/upload"
                   className="z-10 flex justify-center font-bold items-center px-6 py-4 border border-white/10 rounded-full relative overflow-hidden hover:border-white/30"
@@ -53,7 +50,6 @@ const MainLayout: React.FC = () => {
               </div>
             ) : (
               <div className='flex gap-4'>
-                {/* REQUEST A QUOTE button when logged in */}
                 <Link to="/orders" className="z-10 flex justify-center font-bold items-center px-6 py-4 border border-white/10 rounded-full relative overflow-hidden hover:border-white/30">
                   Order List
                 </Link>
@@ -72,7 +68,6 @@ const MainLayout: React.FC = () => {
                     className="ml-2 w-5 h-5"
                   />
                 </Link>
-                {/* Logout button */}
                 <button
                   onClick={handleLogout}
                   className="z-10 flex justify-center font-bold items-center px-6 py-4 border border-white/10 rounded-full relative overflow-hidden hover:border-white/30"

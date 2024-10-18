@@ -7,7 +7,7 @@ const ViewerConfigPage: React.FC = () => {
   const navigate = useNavigate();
   const [isLoggedIn] = useState(!!localStorage.getItem('token'));
   const [selectedMaterial, setSelectedMaterial] = useState('');
-  const [fileUrl, setFileUrl] = useState(localStorage.getItem('uploadedFile') || ''); // State to store the file URL
+  const [fileUrl, setFileUrl] = useState(localStorage.getItem('uploadedFile') || '');
 
   const handleMaterialSelect = (material: string) => {
     setSelectedMaterial(material);
@@ -15,14 +15,13 @@ const ViewerConfigPage: React.FC = () => {
 
   const handlePlaceOrder = () => {
     if (isLoggedIn && selectedMaterial) {
-      navigate('/order');  // Redirect to the order page if the user is logged in and a material is selected
+      navigate('/order');
     }
   };
 
   return (
     <div className="flex flex-row container max-w-screen-xl mx-auto pt-24" style={{ height: 'calc(100vh - 57px)' }}>
       <div className="w-2/3 p-6">
-        {/* Pass fileUrl to FileViewer */}
         <FileViewer fileUrl={fileUrl} />
       </div>
       <div className="w-1/3 p-6 rounded-lg shadow-lg">
@@ -41,7 +40,7 @@ const ViewerConfigPage: React.FC = () => {
           </Link>
           <button
             onClick={handlePlaceOrder}
-            disabled={!isLoggedIn || !selectedMaterial}  // Button disabled unless user is logged in and material is selected
+            disabled={!isLoggedIn || !selectedMaterial} 
             className={`px-6 py-3 text-lg font-bold border-2 rounded-full z-1 ${
               isLoggedIn && selectedMaterial ? 'px-6 py-3 text-lg font-bold border-saeki-yellow border-2 text-saeki-yellow' : 'bg-gray-400 cursor-not-allowed'
             }`}

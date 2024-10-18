@@ -8,7 +8,7 @@ const AdminLayout: React.FC = () => {
         <h1 className="text-2xl font-bold">Admin Dashboard</h1>
       </header>
       <main>
-        <Outlet />  {/* Render the child components here */}
+        <Outlet />
       </main>
       <footer className="bg-gray-800 text-white p-4 text-center">
         <p>Admin Dashboard &copy; 2024</p>
