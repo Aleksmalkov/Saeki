@@ -1,0 +1,19 @@
+.background-saeki-yellow {
+    background-image: linear-gradient(115deg, rgb(255, 253, 154), rgb(250, 255, 0));
+}
+
+.text-saeki-yellow {
+    background-image: linear-gradient(115deg, rgb(255, 253, 154), rgb(250, 255, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-hover-saeki-yellow:hover {
+    background-image: linear-gradient(115deg, rgb(255, 253, 154), rgb(250, 255, 0));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.border-saeki-yellow {
+    border: 1px solid rgb(250 255 0 / 0.1);
+}
